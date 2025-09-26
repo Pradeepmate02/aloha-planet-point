@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useState, type ReactNode } from 'react';
 
 export type NotificationSeverity = 'low' | 'medium' | 'high' | 'critical';
 export type NotificationType = 'hazard_alert' | 'system' | 'report_update' | 'weather';
@@ -43,7 +43,7 @@ export const useNotifications = () => {
 };
 
 interface NotificationProviderProps {
-  children: ReactNode;
+  children: React.ReactNode;
 }
 
 export const NotificationProvider: React.FC<NotificationProviderProps> = ({ children }) => {

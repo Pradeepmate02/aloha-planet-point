@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useState, type ReactNode } from 'react';
 
 export type UserRole = 'citizen' | 'official' | 'analyst' | 'admin';
 
@@ -30,7 +30,7 @@ export const useAuth = () => {
 };
 
 interface AuthProviderProps {
-  children: ReactNode;
+  children: React.ReactNode;
 }
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {

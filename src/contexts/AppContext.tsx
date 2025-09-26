@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useState, type ReactNode } from 'react';
 
 export type ThemeMode = 'light' | 'dark' | 'system';
 
@@ -34,7 +34,7 @@ export const useApp = () => {
 };
 
 interface AppProviderProps {
-  children: ReactNode;
+  children: React.ReactNode;
 }
 
 export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {

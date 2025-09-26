@@ -1,3 +1,4 @@
+import React from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -13,30 +14,32 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <AuthProvider>
-      <AppProvider>
-        <NotificationProvider>
-          <TooltipProvider>
-            <Toaster />
-            <Sonner />
-            <BrowserRouter>
-              <Routes>
-                <Route path="/" element={<Index />} />
-                <Route path="/analytics" element={<Analytics />} />
-                <Route path="/admin" element={<Admin />} />
-                <Route path="/map" element={<div className="p-6 text-center text-muted-foreground">Map view coming soon...</div>} />
-                <Route path="/report" element={<div className="p-6 text-center text-muted-foreground">Hazard reporting coming soon...</div>} />
-                {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-            </BrowserRouter>
-          </TooltipProvider>
-        </NotificationProvider>
-      </AppProvider>
-    </AuthProvider>
-  </QueryClientProvider>
-);
+const App: React.FC = () => {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <AuthProvider>
+        <AppProvider>
+          <NotificationProvider>
+            <TooltipProvider>
+              <Toaster />
+              <Sonner />
+              <BrowserRouter>
+                <Routes>
+                  <Route path="/" element={<Index />} />
+                  <Route path="/analytics" element={<Analytics />} />
+                  <Route path="/admin" element={<Admin />} />
+                  <Route path="/map" element={<div className="p-6 text-center text-muted-foreground">Map view coming soon...</div>} />
+                  <Route path="/report" element={<div className="p-6 text-center text-muted-foreground">Hazard reporting coming soon...</div>} />
+                  {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </BrowserRouter>
+            </TooltipProvider>
+          </NotificationProvider>
+        </AppProvider>
+      </AuthProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;
