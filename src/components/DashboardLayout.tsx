@@ -191,15 +191,26 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
                 <span className="text-xs">Report</span>
               </NavLink>
               <NavLink
-                to="/analytics"
+                to="/social"
                 className={({ isActive }) =>
                   `flex flex-col items-center gap-1 p-2 ${
                     isActive ? 'text-primary' : 'text-muted-foreground'
                   }`
                 }
               >
-                <BarChart3 className="h-5 w-5" />
-                <span className="text-xs">Analytics</span>
+                <MessageSquare className="h-5 w-5" />
+                <span className="text-xs">Social</span>
+              </NavLink>
+              <NavLink
+                to="/reports"
+                className={({ isActive }) =>
+                  `flex flex-col items-center gap-1 p-2 ${
+                    isActive ? 'text-primary' : 'text-muted-foreground'
+                  }`
+                }
+              >
+                <FileText className="h-5 w-5" />
+                <span className="text-xs">Reports</span>
               </NavLink>
             </div>
           </div>
