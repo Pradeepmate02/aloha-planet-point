@@ -35,7 +35,7 @@ const getNavigationItems = (role: string) => {
   ];
 
   const adminItems = [
-    { title: 'User Management', url: '/users', icon: Users },
+    { title: 'Admin Panel', url: '/admin', icon: Users },
     { title: 'System Settings', url: '/settings', icon: Settings },
   ];
 

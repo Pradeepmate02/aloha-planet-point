@@ -7,6 +7,8 @@ import { AuthProvider } from "@/contexts/AuthContext";
 import { AppProvider } from "@/contexts/AppContext";
 import { NotificationProvider } from "@/contexts/NotificationContext";
 import Index from "./pages/Index";
+import Analytics from "./pages/Analytics";
+import Admin from "./pages/Admin";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +24,10 @@ const App = () => (
             <BrowserRouter>
               <Routes>
                 <Route path="/" element={<Index />} />
+                <Route path="/analytics" element={<Analytics />} />
+                <Route path="/admin" element={<Admin />} />
+                <Route path="/map" element={<div className="p-6 text-center text-muted-foreground">Map view coming soon...</div>} />
+                <Route path="/report" element={<div className="p-6 text-center text-muted-foreground">Hazard reporting coming soon...</div>} />
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
               </Routes>
